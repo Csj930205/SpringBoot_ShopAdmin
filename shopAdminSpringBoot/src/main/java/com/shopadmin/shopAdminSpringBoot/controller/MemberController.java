@@ -14,7 +14,7 @@ import com.shopadmin.shopAdminSpringBoot.vo.MemberVo;
 public class MemberController {
 	@Autowired
 	MemberRepository mr;
-	@GetMapping("memberlist.do")
+	@GetMapping("/admin/memberlist.do")
 	public String list(Model model) {
 		Iterable<MemberVo> memberList=mr.findAllByOrderBySignupTimeDesc();
 		model.addAttribute("memberList",memberList);
