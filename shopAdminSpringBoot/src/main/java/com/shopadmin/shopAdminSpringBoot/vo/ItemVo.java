@@ -26,9 +26,9 @@ public class ItemVo {
 	private int count;
 	private int price;
 	private String color;
-	@Column(name="main_img")
+	@Column(name="main_img", nullable= true, insertable = false, updatable =false)
 	private String mainImg;
-	@Column(name="detail_img")
+	@Column(name="detail_img", nullable= true, insertable = false, updatable =false)
 	private String detailImg;
 	@Column(name="model_num")
 	private String modelNum;
