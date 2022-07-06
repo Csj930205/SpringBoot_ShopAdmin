@@ -33,10 +33,10 @@ public class ItemController {
 		ir.save(item);
 		if(insert) {
 			session.setAttribute("msg", "아이템 저장 성공");
-			return "redirect:/item/itemlist";
+			return "redirect:/item/itemlist.do";
 		}else {
 			session.setAttribute("msg", "아이템 저장 실패");
-			return "redirect:/item/iteminsert";
+			return "redirect:/item/iteminsert.do";
 		}
 	}
 }

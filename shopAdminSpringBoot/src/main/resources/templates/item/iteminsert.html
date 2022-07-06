@@ -8,6 +8,7 @@
 		<blockquote class="blockquote">
 			<h1 class="h1">아이템 등록</h1>
 		</blockquote>
+		<hr>
 	  	<form action="/item/iteminsert.do" method="post" name="itemForm" enctype="multipart/form-data">
 	  		<p class="input-group">
 			  <label for="itemFormName" class="input-group-text">상품이름</label>
@@ -38,11 +39,11 @@
 			</p>
 	  		<p class="input-group">
 			  <label for="itemFormMainImg" class="input-group-text">상품메인이미지</label>
-			  <input name="mainImgFile" type="file" class="form-control" id="itemFormMainImg" multiple="multiple">
+			  <input name="mainImgFile" type="file" class="form-control" id="itemFormMainImg" value="" multiple="multiple">
 			</p>
 	  		<p class="input-group">
 			  <label for="itemFormDetailImg" class="input-group-text">상품상세이미지</label>
-			  <input name="detailImgFile" type="file" class="form-control" id="itemFormDetailImg" multiple="multiple">
+			  <input name="detailImgFile" type="file" class="form-control" id="itemFormDetailImg" value="" multiple="multiple">
 			</p>
 	  		<p class="input-group">
 			  <label for="itemFormSaleTime" class="input-group-text">상품판매시작일</label>
