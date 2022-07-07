@@ -34,7 +34,7 @@
 							<td th:text="${mem.signupTime}"></td>
 							<td th:text="${mem.birth}"></td>
 							<td th:text="${mem.grade}"></td>
-							<td><a href="./memberModify.do?id=<%=mem.getId()%>">수정</a></td>
+							<td><a th:href="@{/member/admin/membermodify/{id}(id = ${mem.id})}">수정</a></td>
 						</tr>
 					</tbody>
 				</table>

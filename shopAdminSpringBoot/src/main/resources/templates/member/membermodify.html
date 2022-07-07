@@ -1,0 +1,89 @@
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+	<head>
+		<meta carset="UTF-8">
+	</head>
+	<body>
+		<header th:insert="header_nav.html"></header>
+		<h1>회원정보 수정</h1>
+		<hr>
+		<div class="d-flex justify-content-center align-items-center" style="height:clac(100vh -200px)">
+			<form action="/member/memberUpdate.do" method="post">
+				<div class="col-sm-12">
+					<div class="input-group mb-1">
+	  					<span class="input-group-text" id="basic-addon3">아이디</span>
+	  					<input type="text" class="form-control" name="id" th:value="${memVo.get().id}" disabled>
+					</div>
+				</div>	
+				<div class="col-sm-12">
+					<div class="input-group mb-1">
+	  					<span class="input-group-text" id="basic-addon3">이메일</span>
+	  					<input type="text" class="form-control" name="email" th:value="${memVo.get().email}">
+					</div>
+				</div>	
+				<div class="col-sm-12">
+					<div class="input-group mb-1">
+	  					<span class="input-group-text" id="basic-addon3">폰번호</span>
+	  					<input type="text" class="form-control" name="phone" th:value="${memVo.get().phone}">
+					</div>
+				</div>	
+				<div class="col-sm-12">
+					<div class="input-group mb-1">
+	  					<span class="input-group-text" id="basic-addon3">패스워드</span>
+	  					<input type="text" class="form-control" name="pw" th:value="${memVo.get().pw}">
+					</div>
+				</div>										
+				<div class="col-sm-12">
+					<div class="input-group mb-1">
+	  					<span class="input-group-text" id="basic-addon3">이름</span>
+	  					<input type="text" class="form-control" name="name" th:value="${memVo.get().name}">
+					</div>
+				</div>	
+				<div class="col-sm-12">
+					<div class="input-group mb-1">
+	  					<label class="input-group-text" for="inputGroupSelect01">주소</label>
+	  					<select class="form-select" id="inputGroupSelect01" name="address" th:value="${memVo.get().address}">
+							    <option value="서울">서울</option>
+							    <option value="부산">부산</option>
+							    <option value="대구">대구</option>
+	  					</select>
+					</div>
+				</div>	
+				<div class="col-sm-12">
+					<div class="input-group mb-1">
+	  					<span class="input-group-text" id="basic-addon3">주소상세</span>
+	  					<input type="text" class="form-control" name="address_detail" th:value="${memVo.get().addressDetail}">
+					</div>
+				</div>	
+				<div class="col-sm-12">
+					<div class="input-group mb-1">
+	  					<label class="input-group-text" for="inputGroupSelect01">등급</label>
+	  					<select class="form-select" id="inputGroupSelect01" name="grade" th:value="${memVo.get().grade}">
+							<option value="0" th:selected="${memVo.get().grade}==0">총관리자(0)</option>
+							<option value="1" th:selected="${memVo.get().grade}==1">관리자(1)</option>
+							<option value="2" th:selected="${memVo.get().grade}==2">판매자(2)</option>
+							<option value="3" th:selected="${memVo.get().grade}==3">소비자(3)</option>
+							<option value="4" th:selected="${memVo.get().grade}==4">탈퇴(4)</option>
+	  					</select>
+					</div>
+				</div>			
+				<div class="col-sm-12">
+					<div class="input-group mb-1">
+	  					<span class="input-group-text" id="basic-addon3">가입일</span>
+	  					<input type="date" class="form-control" name="signup_time" th:value="${memVo.get().signupTime}" disabled>
+					</div>
+				</div>	
+				<div class="col-sm-12">
+					<div class="input-group mb-1">
+	  					<span class="input-group-text" id="basic-addon3">생일</span>
+	  					<input type="date" class="form-control" name="birth" th:value="${memVo.get().birth}">
+					</div>
+				</div>	
+				<p class="d-grid gap-2 d-md-flex justify-content-md-end">
+					<button type="reset" class="btn btn-outline-warning">리셋</button>
+					<a class="btn btn-outline-danger" href="./memberDelete.do?id=<%=memVo.getId()%>" >삭제</a>
+					<button type="submit" class="btn btn-outline-primary">수정</button>					
+				</p>				
+			</form>
+		</div>
+	</body>
+</html>
