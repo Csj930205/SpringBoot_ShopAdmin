@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.shopadmin.shopAdminSpringBoot.repository.MemberRepository;
@@ -31,4 +33,22 @@ public class MemberController {
 		model.addAttribute("memVo",memVo);
 		return "/member/membermodify";
 	}
+	@PostMapping("/admin/memberUpdate.do")
+	public String update(MemberVo memVo, HttpSession session) {
+		boolean update=false;
+		Optional<MemberVo> memOption=mr.findById(memVo.getId());
+		if(!(memOption.isEmpty())) {
+			mr.save(memVo);
+			update=true;
+			session.setAttribute("msg", "수정 성공");
+		}else {
+			session.setAttribute("msg", "수정 실패");
+		}
+		if(update) {
+			return "redirect:/";
+		}else {
+			return "redirect:/admin/membermodify/{id}";
+		}
+	}
+	
 }

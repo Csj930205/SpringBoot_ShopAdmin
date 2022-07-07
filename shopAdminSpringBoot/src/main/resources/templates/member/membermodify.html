@@ -7,11 +7,11 @@
 		<h1>회원정보 수정</h1>
 		<hr>
 		<div class="d-flex justify-content-center align-items-center" style="height:clac(100vh -200px)">
-			<form action="/member/memberUpdate.do" method="post">
+			<form action="/member/admin/memberUpdate.do" method="post">
 				<div class="col-sm-12">
 					<div class="input-group mb-1">
 	  					<span class="input-group-text" id="basic-addon3">아이디</span>
-	  					<input type="text" class="form-control" name="id" th:value="${memVo.get().id}" disabled>
+	  					<input type="text" class="form-control" name="id" th:value="${memVo.get().id}" reonly>
 					</div>
 				</div>	
 				<div class="col-sm-12">

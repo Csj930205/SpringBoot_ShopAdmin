@@ -58,5 +58,10 @@
 				</div>
 			</div>
 		</nav>
+		<script th:if="${session.msg}" th:inline="javascript">
+			let msg=[[${session.msg}]]
+			alert(msg)
+			[[${#session.removeAttribute("msg")}]]
+		</script>
 	</body>
 </html>
